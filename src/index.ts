@@ -41,31 +41,59 @@
 
 //  CALCULATOR for types on functions
 
-type operation = "+" | "-" | "*" | "/";
+// type operation = "+" | "-" | "*" | "/";
 
-const calculator = (num1: number, num2: number, op:operation): number => {
-    if(op === "+") return num1+num2;
-    if(op === "-") return num1-num2;
-    if(op === "*") return num1*num2;
+// const calculator = (num1: number, num2: number, op:operation): number => {
+//     if(op === "+") return num1+num2;
+//     if(op === "-") return num1-num2;
+//     if(op === "*") return num1*num2;
 
-    return num1/num2;
+//     return num1/num2;
+// }
+
+// //console.log(calculator(45, 2, "+"));
+
+// type Staff = {
+//     name: string,
+//     age: number
+// }
+
+// function getUser(arg: Staff): void {
+// console.log(arg.name);
+// }
+
+// const newStaff: Staff = {
+//     name: "Your Name",
+//     age: 89
+// }
+
+// getUser(newStaff)
+
+type User = {
+  name: string;
+  age: number;
+  email: string;
+};
+
+const users: User[] = [
+  { name: "A", age: 17, email: "a@mail.com" },
+  { name: "B", age: 21, email: "b@mail.com" }
+];
+
+function getAdultEmails(users: User[]): string[] {
+  const result: string[] = [];
+  for(let i=0; i<users.length; i++){
+    if(users[i].age >= 18) result.push(users[i].email);
+  }
+
+  return result;
+}
+//console.log("new")
+console.log(getAdultEmails(users)); // ["b@mail.com"]
+
+const getId = (id: string | number): void => {
+    if(typeof id === "string") console.log(id.toUpperCase());
+    else console.log(id.toFixed(8));
 }
 
-//console.log(calculator(45, 2, "+"));
-
-type Staff = {
-    name: string,
-    age: number
-}
-
-function getUser(arg: Staff): void {
-console.log(arg.name);
-}
-
-const newStaff: Staff = {
-    name: "Your Name",
-    age: 89
-}
-
-getUser(newStaff)
-
+getId(74549824936784280637)
